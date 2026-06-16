@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "typescript": "~6.0.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "parcel": "^2.6.2"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "@cubejs-client/core": "^0.31.0",
+    "chart.js": "^4.0.0"
   }
 }

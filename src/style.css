@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
-body {
-  background-color: var(--color-zinc-950);
-  color: var(--color-zinc-200);
+.cd-logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
 }
+.cd-logo .cd-crypto { font-size: 32px; font-weight: 600; color: #C9A64E; letter-spacing: 0.04em; }
+.cd-logo .cd-dot    { font-size: 32px; font-weight: 600; color: #C9A64E; }
+.cd-logo .cd-dash   { font-size: 32px; font-weight: 300; color: #e8e0cc; letter-spacing: 0.04em; }
