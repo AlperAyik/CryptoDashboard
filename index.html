@@ -8,24 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="bg-[#0A0E1A]">
 
-  <section id="navbar" class="bg-zinc-700 h-10">
-    <div>
-      <a class="cd-logo" href="/">
-        <span class="cd-crypto">Crypto</span><span class="cd-dot">·</span><span class="cd-dash">Dashboard</span>
-      </a>
+  <section id="navbar" class="bg-[#111827] border-b border-[#1F2937] h-10 grid grid-cols-2">
+    <div></div>
+    <div class="flex  justify-end mr-5 text-white">
+      <ul class="flex items-center justify-between gap-2">
+        <li>Favorites</li>
+        <li>Contact</li>
+        <li>About us</li>
+      </ul>
     </div>
   </section>
 
   <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+  <button id="coinsBtn" class="text-white">Coins</button>
+  <button id="nftsBtn" class="text-white">Nfts</button>
 
-  <section id="trending" class="flex flex-1 justify-center items-center gap-5">
-<!--  voeg nog een div om de trendings heen zodat ik nog een text er boven kan zetten  -->
-    <div id="trending_coins" class="grid grid-cols-1  bg-zinc-200 w-fit p-10 border-1 border-black rounded-md"></div>
-    <div id="trending_nft" class="grid grid-cols-1  bg-zinc-200 w-fit p-10 border-1 border-black rounded-md"></div>
+  <section id="trending" class="flex flex-1 bg-slate-700 justify-center items-center gap-5 p-6">
+    <div>
+      <h1 class="text-white">🔥 Trending Coins:</h1>
+      <div id="trending_coins"
+           class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl">
+      </div>
+    </div>
+    <div>
+      <h1 class="text-gray-200 text-sm font-medium mb-2">🔥 Trending NFTs:</h1>
+      <div id="trending_nft"
+           class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl h-90 mb-2">
+      </div>
+    </div>
   </section>
-
   <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/*body {*/
+/*  background: var(--color-)*/
+/*}*/
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
 .cd-logo {
   display: inline-flex;
   align-items: baseline;
