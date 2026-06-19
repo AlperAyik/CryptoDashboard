@@ -57,7 +57,7 @@ coinsBtn.addEventListener('click', async() => {
     myChart =new Chart(
         document.getElementById('acquisitions') as HTMLCanvasElement,
         {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: result.coins.map((row: any) => row.item.name),
                 datasets: [{
@@ -81,7 +81,7 @@ nftsBtn.addEventListener('click', async() => {
     myChart = new Chart(
         document.getElementById('acquisitions') as HTMLCanvasElement,
         {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: result.nfts.map((row: any) => row.name),
                 datasets: [{
@@ -100,7 +100,7 @@ async function temp() {
     myChart =new Chart(
         document.getElementById('acquisitions') as HTMLCanvasElement,
         {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: result.coins.map((row: any) => row.item.name),
                 datasets: [{

@@ -9,6 +9,10 @@ li {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
 .cd-logo {
   display: inline-flex;
   align-items: baseline;
