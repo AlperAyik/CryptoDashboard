@@ -6,7 +6,7 @@ const trendingNft = document.getElementById("trending_nft") as HTMLDivElement;
 
 async function trendingElements() {
     const getApi = await trending();
-    const coins = getApi.coins.slice(0,3);
+    const coins = getApi.coins.slice(0, 3);
     const nfts = getApi.nfts.slice(0, 3)
     console.log(getApi);
 
@@ -15,7 +15,7 @@ async function trendingElements() {
         newDiv.innerHTML = `
             <!-- fix align issue-->
            <div class="flex">
-            <div class="grid grid-cols-1 p-2">
+            <div class="grid grid-cols-1 p-2" title="${coin.item.name}">
                 <h1 class="text-white">${coin.item.name}</h1>
                 <img src="${coin.item.small}" alt="">
             </div>
@@ -32,7 +32,7 @@ async function trendingElements() {
         let newDiv = document.createElement("div");
         newDiv.innerHTML = `
         <h1 class="text-white">${nft.name}</h1>
-        <img src="${nft.thumb}" alt="">
+        <img src="${nft.thumb}" alt="" title="${nft.name}">
         <h2 class="${nft.floor_price_24h_percentage_change > 1 ? "text-green-400" : "text-red-400"}">${Math.floor(100 * nft.floor_price_24h_percentage_change) / 100}%</h2>
         `
 
@@ -46,15 +46,15 @@ trendingElements()
 let myChart: Chart | null = null;
 const coinsBtn = document.getElementById('coinsBtn') as HTMLButtonElement;
 const nftsBtn = document.getElementById('nftsBtn') as HTMLButtonElement;
-coinsBtn.addEventListener('click', async() => {
+coinsBtn.addEventListener('click', async () => {
     if (myChart) {
         myChart.destroy()
         myChart = null
     }
 
-   const result = await trending()
+    const result = await trending()
 
-    myChart =new Chart(
+    myChart = new Chart(
         document.getElementById('acquisitions') as HTMLCanvasElement,
         {
             type: 'line',
@@ -63,13 +63,30 @@ coinsBtn.addEventListener('click', async() => {
                 datasets: [{
                     label: 'current % in 24h Coins',
                     data: result.coins.map((row: any) => row.item.data.price_change_percentage_24h.usd),
+                    borderColor: '#52307c',
                 }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'black'
+                        },
+                    },
+                    y: {
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+
             }
         }
     )
 })
 
-nftsBtn.addEventListener('click', async() => {
+nftsBtn.addEventListener('click', async () => {
     if (myChart) {
         myChart.destroy()
         myChart = null
@@ -87,7 +104,24 @@ nftsBtn.addEventListener('click', async() => {
                 datasets: [{
                     label: 'current % in 24h Nfts',
                     data: result.nfts.map((row: any) => row.floor_price_24h_percentage_change),
+                    borderColor: '#52307c',
                 }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'black'
+                        },
+                    },
+                    y: {
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+
             }
         }
     )
@@ -97,7 +131,7 @@ nftsBtn.addEventListener('click', async() => {
 async function temp() {
     const result = await trending()
 
-    myChart =new Chart(
+    myChart = new Chart(
         document.getElementById('acquisitions') as HTMLCanvasElement,
         {
             type: 'line',
@@ -106,7 +140,24 @@ async function temp() {
                 datasets: [{
                     label: 'current % in 24h Coins',
                     data: result.coins.map((row: any) => row.item.data.price_change_percentage_24h.usd),
+                    borderColor: '#52307c', 
                 }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'black'
+                        },
+                    },
+                    y: {
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+
             }
         }
     )

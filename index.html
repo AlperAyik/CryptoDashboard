@@ -1,44 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cyrptodashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body class="bg-[#0A0E1A]">
 
-  <section id="navbar" class="bg-[#111827] border-b border-[#1F2937] h-10 grid grid-cols-2">
-    <div></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cyrptodashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="icon" type="image/x-icon" href="/public/Images/coinFavicon.png">
+</head>
+
+<body class="bg-[#0A0E1A]">
+
+  <section id="navbar" class="bg-[#111827] border-b border-[#1F2937] h-fit grid grid-cols-2 p-10">
+    <div class="">
+      <h1 class="text-white  text-4xl">Cyrptodashboard</h1>
+    </div>
     <div class="flex  justify-end mr-5 text-white">
-      <ul class="flex items-center justify-between gap-2">
-        <li>Favorites</li>
-        <li>Contact</li>
-        <li>About us</li>
+      <ul class="flex items-center justify-between gap-5">
+        <li class="text-xl">Favorites</li>
+        <li class="text-xl">Contact</li>
+        <li class="text-xl">About us</li>
       </ul>
     </div>
   </section>
 
-  <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
-  <button id="coinsBtn" class="text-white">Coins</button>
-  <button id="nftsBtn" class="text-white">Nfts</button>
+  <div class="flex justify-center mt-10">
+    <div>
+      <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+      <div class="flex justify-center mt-5 gap-5">
+        <button id="coinsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500">Coins</button>
+        <button id="nftsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500">Nfts</button>
+      </div>
+    </div>
+  </div>
 
-  <section id="trending" class="flex flex-1 bg-slate-700 justify-center items-center gap-5 p-6">
+
+  <section id="trending" class="flex flex-1 mt-10 bg-slate-700 justify-center items-center gap-5 p-6">
     <div>
       <h1 class="text-white">🔥 Trending Coins:</h1>
-      <div id="trending_coins"
-           class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl">
+      <div id="trending_coins" class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl">
       </div>
     </div>
     <div>
       <h1 class="text-gray-200 text-sm font-medium mb-2">🔥 Trending NFTs:</h1>
-      <div id="trending_nft"
-           class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl h-90 mb-2">
+      <div id="trending_nft" class="grid grid-cols-1 bg-[#111827] border border-[#1F2937] p-6 rounded-xl h-90 mb-2">
       </div>
     </div>
   </section>
   <script type="module" src="/src/main.ts"></script>
-  </body>
+</body>
+
 </html>
