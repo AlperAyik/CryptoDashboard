@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-/*body {*/
-/*  background: var(--color-)*/
-/*}*/
+body {
+    background: var(--color-zinc-950);
+    margin: 0;
+    min-height: 100vh;
+    /* Dark grid lines (#ffffff0a) on a dark gray (#112) background */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px; /* Controls the size of each grid box */
+}
 
 li {
-  list-style: none;
-  cursor: pointer;
+    list-style: none;
+    cursor: pointer;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .cd-logo {
-  display: inline-flex;
-  align-items: baseline;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  line-height: 1;
-  text-decoration: none;
-  user-select: none;
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1;
+    text-decoration: none;
+    user-select: none;
 }
-.cd-logo .cd-crypto { font-size: 32px; font-weight: 600; color: #C9A64E; letter-spacing: 0.04em; }
-.cd-logo .cd-dot    { font-size: 32px; font-weight: 600; color: #C9A64E; }
-.cd-logo .cd-dash   { font-size: 32px; font-weight: 300; color: #e8e0cc; letter-spacing: 0.04em; }
+
+.cd-logo .cd-crypto {
+    font-size: 32px;
+    font-weight: 600;
+    color: #C9A64E;
+    letter-spacing: 0.04em;
+}
+
+.cd-logo .cd-dot {
+    font-size: 32px;
+    font-weight: 600;
+    color: #C9A64E;
+}
+
+.cd-logo .cd-dash {
+    font-size: 32px;
+    font-weight: 300;
+    color: #e8e0cc;
+    letter-spacing: 0.04em;
+}
+
+
+.navbar {
+    opacity: 1;
+    position: fixed;
+    background-color: #111827;
+    width: fit-content;
+    border: 1px solid #1F2937;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    margin-top: 6.5rem;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.navbar.close {
+    opacity: 0;
+}
+
+.btnOpen {
+    opacity: 0;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.btnOpen.open {
+    opacity: 1;
+}
