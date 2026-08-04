@@ -50,6 +50,7 @@ button {
 
 
 .navbar {
+    height: fit-content;
     opacity: 1;
     position: fixed;
     background-color: #111827;
@@ -71,5 +72,14 @@ button {
 }
 
 .btnOpen.open {
+    opacity: 1;
+}
+
+.notBar {
+    opacity: 0;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.notBar.open {
     opacity: 1;
 }

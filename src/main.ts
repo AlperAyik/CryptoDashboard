@@ -3,11 +3,14 @@ import temp from './components/ChartTest.ts'
 
 const trendingCoins = document.getElementById("trending_coins") as HTMLDivElement;
 const trendingNft = document.getElementById("trending_nft") as HTMLDivElement;
+const trendingOther = document.getElementById("trending_other") as HTMLDivElement;
 
 async function trendingElements() {
     const getApi = await trending();
     const coins = getApi.coins.slice(0, 3);
     const nfts = getApi.nfts.slice(0, 3)
+    const other = getApi.categories.slice(0, 3)
+    console.log(other)
     console.log(getApi);
 
     coins.forEach((coin = {}) => {
@@ -59,6 +62,28 @@ async function trendingElements() {
 
         trendingNft.appendChild(newDiv);
     })
+
+    other.forEach((oth = {}, index = Number) => {
+        let newDiv = document.createElement("div");
+        newDiv.innerHTML = `
+          <div class="grid grid-cols-[1fr_auto_auto] items-center gap-4 p-2 min-h-28">
+            <div class="flex items-center gap-2">
+                <img src="${oth.top_3_coins_images[index]}" alt="" title="${oth.name}" class="w-12 h-12">
+                <h1 class="text-white">${oth.name}</h1>
+            </div>
+        
+            <h2 class="text-white text-right">
+                $${oth.market_cap_1h_change}
+            </h2>
+        
+            <h2 class="text-right ${oth.data.market_cap_change_percentage_24h.usd > 1 ? 'text-green-400' : 'text-red-400'}">
+                ${Math.floor(100 * oth.data.market_cap_change_percentage_24h.usd) / 100}%
+            </h2>
+        </div>
+        `
+
+        trendingOther.appendChild(newDiv);
+    })
 }
 
 trendingElements()
@@ -76,4 +101,16 @@ closeNav.addEventListener("click", () => {
 btnOpen.addEventListener("click", () => {
     navbar.classList.remove("close");
     btnOpen.classList.remove("open");
+})
+
+const notificationsBtn = document.getElementById("notificationsBTn") as HTMLButtonElement;
+const notifictationBar = document.querySelector('.notBar') as HTMLDivElement;
+
+notificationsBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    notifictationBar.classList.toggle("open");
+})
+
+document.body.addEventListener("click", () => {
+    notifictationBar.classList.remove("open");
 })
