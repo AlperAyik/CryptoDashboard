@@ -1,4 +1,5 @@
-import trending from './components/trending.ts' // currently treding cyrpto coins
+import { trending, global } from './components/trending.ts' // currently treding cyrpto coins
+import priceAlerts from "./components/priceAlerts.ts";
 import temp from './components/ChartTest.ts'
 
 const trendingCoins = document.getElementById("trending_coins") as HTMLDivElement;
@@ -9,9 +10,7 @@ async function trendingElements() {
     const getApi = await trending();
     const coins = getApi.coins.slice(0, 3);
     const nfts = getApi.nfts.slice(0, 3)
-    const other = getApi.categories.slice(0, 3)
-    console.log(other)
-    console.log(getApi);
+    const other = getApi.categories.slice(0, 3);
 
     coins.forEach((coin = {}) => {
         let newDiv = document.createElement("div");
@@ -114,3 +113,20 @@ notificationsBtn.addEventListener("click", (event) => {
 document.body.addEventListener("click", () => {
     notifictationBar.classList.remove("open");
 })
+
+const totalMarketCap = document.getElementById("totalMarketCap") as HTMLSpanElement;
+
+async function marketCap() {
+    const response = await global()
+    const marketCap = response.data.total_market_cap.usd
+
+    totalMarketCap.textContent = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        notation: 'compact',
+        maximumFractionDigits: 2,
+    }).format(marketCap)
+}
+
+marketCap()
+

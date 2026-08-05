@@ -58,7 +58,7 @@ button {
     border: 1px solid #1F2937;
     border-top-right-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
-    margin-top: 6.5rem;
+    margin-top: 6.2rem;
     transition: opacity ease-in-out 0.2s;
 }
 
@@ -82,4 +82,11 @@ button {
 
 .notBar.open {
     opacity: 1;
+}
+
+.pText {
+    font-family: 'Sekuya';
+    font-size: x-small;
+    padding-top: 5px;
+    border-bottom: 1px solid black;
 }

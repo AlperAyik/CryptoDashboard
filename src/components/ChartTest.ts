@@ -1,4 +1,4 @@
-import trending from './trending.ts' // currently treding cyrpto coins
+import {trending, global} from './trending.ts' // currently treding cyrpto coins
 import Chart from 'chart.js/auto'
 
 let myChart: Chart | null = null;
