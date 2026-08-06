@@ -24,8 +24,11 @@
         <h1 style="font-family: 'Sekuya';" class="text-white  text-4xl">Cyrptodashboard</h1>
     </div>
     <div class="flex justify-end -m-10 mr-8">
-        <button id="notificationsBTn" class="fixed"><img src="/Images/notification.png" class="bg-white shadow-blue-500 h-10 w-10 rounded-4xl" alt=""></button>
-        <p class="rounded-[50%] h-5 w-5 bg-red-500 -ml-4 mb-7 text-white fixed"><span class="flex justify-center mb-5">1</span></p>
+        <button id="notificationsBTn" class="fixed"><img src="/Images/notification.png"
+                                                         class="bg-white shadow-blue-500 h-10 w-10 rounded-4xl" alt="">
+        </button>
+        <p class="rounded-[50%] h-5 w-5 bg-red-500 -ml-4 mb-7 text-white fixed"><span
+                class="flex justify-center mb-5">1</span></p>
         <div class="notBar mt-11 fixed">
             <p class="h-2 w-2 bg-white -mb-6 -ml-8 border-[0, 3px, 0, 3px] border-black inline-1 p-3 rotate-45"></p>
             <div id="notBarText" class="bg-white w-25 absolute -ml-17 mt-2 rounded-md">
@@ -68,19 +71,19 @@
 <section id="trending" class="flex mt-16.5  justify-center items-center gap-5">
     <div class="grid grid-cols-3 gap-5">
         <div>
-            <h1 class="text-gray-200 text-sm font-medium mb-2">🔥 Trending Coins:</h1>
+            <h1 class="text-gray-200 text-sm font-medium mb-2" style="font-family: 'Sekuya'; font-size: small;">🔥 Trending Coins</h1>
             <div id="trending_coins"
                  class="grid grid-cols-1 mt-4 bg-[#111827]  border border-[#1F2937] p-6 rounded-xl h-100 w-130">
             </div>
         </div>
         <div>
-            <h1 class="text-gray-200 text-sm font-medium mb-2">🔥 Trending NFTs:</h1>
+            <h1 class="text-gray-200 text-sm font-medium mb-2" style="font-family: 'Sekuya'; font-size: small;">🔥 Trending NFTs:</h1>
             <div id="trending_nft"
                  class="grid grid-cols-1 mt-5 bg-[#111827] border border-[#1F2937] p-6 rounded-xl mb-2 h-100 w-130 shadow-red-900">
             </div>
         </div>
         <div>
-            <h1 class="text-gray-200 text-sm font-medium mb-2">🔥 Trending Other:</h1>
+            <h1 class="text-gray-200 text-sm font-medium mb-2" style="font-family: 'Sekuya'; font-size: small;">🔥 Trending Other:</h1>
             <div id="trending_other"
                  class="grid grid-cols-1 mt-5 bg-[#111827] border border-[#1F2937] p-6 rounded-xl mb-2 h-100 w-130 shadow-red-900">
             </div>
@@ -88,10 +91,26 @@
     </div>
 </section>
 
-<div class="flex justify-center items-center gap-5">
+<div class="flex justify-center items-center gap-5 mt-10">
     <div class="bg-[#111827] w-fit p-10 rounded-xl">
         <div class=" rounded-4xl text-white">
-            <h1 class="text-white">Total market cap: <span id="totalMarketCap">2T</span></h1>
+            <h1 class="text-white" style="font-family: 'Sekuya';">Total market cap: <span class="circular_bar"
+                                                                                          title="total market cap"><span
+                    id="totalMarketCap" style="font-family: 'Sekuya'; font-size: medium">2T</span></span></h1>
+        </div>
+    </div>
+    <div class="bg-[#111827] w-fit p-10 rounded-xl">
+        <div class=" rounded-4xl text-white">
+            <h1 class="text-white" style="font-family: 'Sekuya';">Total Active Crypto currencies : <span class="circular_bar"
+                                                                                                  title="total market cap"><span
+                    id="totalCryptoCurrencies" style="font-family: 'Sekuya'; font-size: medium">2T</span></span></h1>
+        </div>
+    </div>
+    <div class="bg-[#111827] w-fit p-10 rounded-xl">
+        <div class=" rounded-4xl text-white">
+            <h1 class="text-white" style="font-family: 'Sekuya';">Total market volume: <span class="circular_bar"
+                                                                                          title="total market cap"><span
+                    id="totalVolume" style="font-family: 'Sekuya'; font-size: medium">2T</span></span></h1>
         </div>
     </div>
 </div>
@@ -99,10 +118,11 @@
 <div class="flex justify-center mt-10">
     <div class="bg-[#111827] w-fit rounded-4xl">
         <div class="flex justify-center mt-10 gap-5">
-            <button id="coinsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500">
+            <button id="coinsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500" style="font-family: 'Sekuya'; font-size: small;">
                 Coins
             </button>
-            <button id="nftsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500">Nfts
+            <button id="nftsBtn" class="text-white rounded-md p-3 bg-purple-500 hover:bg-purple-700 duration-500" style="font-family: 'Sekuya'; font-size: small;">
+                Nfts
             </button>
         </div>
         <div style="width: 800px;" class="mt-10">

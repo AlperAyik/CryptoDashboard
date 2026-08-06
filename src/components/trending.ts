@@ -7,6 +7,7 @@ export async function trending() {
 
 export async function global() {
     const response = await fetch("https://api.coingecko.com/api/v3/global");
+    // console.log(await response.json());
     return await response.json();
 }
 

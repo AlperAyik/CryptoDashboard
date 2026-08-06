@@ -115,10 +115,22 @@ document.body.addEventListener("click", () => {
 })
 
 const totalMarketCap = document.getElementById("totalMarketCap") as HTMLSpanElement;
+const totalVolume = document.getElementById("totalVolume") as HTMLSpanElement;
+const totalCryptoCurrencies = document.getElementById("totalCryptoCurrencies") as HTMLSpanElement;
 
-async function marketCap() {
+async function market() {
     const response = await global()
     const marketCap = response.data.total_market_cap.usd
+    const marketVol = response.data.total_volume.usd;
+
+    totalCryptoCurrencies.textContent = response.data.active_cryptocurrencies;
+
+    totalVolume.textContent = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        notation: 'compact',
+        maximumFractionDigits: 2,
+    }).format(marketVol)
 
     totalMarketCap.textContent = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -128,5 +140,6 @@ async function marketCap() {
     }).format(marketCap)
 }
 
-marketCap()
+market()
+
 
