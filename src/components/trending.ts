@@ -10,5 +10,4 @@ export async function global() {
     // console.log(await response.json());
     return await response.json();
 }
-
 export default {trending, global};

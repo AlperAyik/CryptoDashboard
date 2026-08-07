@@ -98,3 +98,10 @@ button {
     padding: 15px;
     border-radius: 50%;
 }
+
+.tableCoins {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    border: 1px solid black;
+}

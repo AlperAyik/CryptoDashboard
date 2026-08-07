@@ -1,4 +1,4 @@
-import { trending, global } from './components/trending.ts' // currently treding cyrpto coins
+import { trending, global} from './components/trending.ts' // currently treding cyrpto coins
 import priceAlerts from "./components/priceAlerts.ts";
 import temp from './components/ChartTest.ts'
 
@@ -17,7 +17,7 @@ async function trendingElements() {
         newDiv.innerHTML = `
            <div class="grid grid-cols-[1fr_auto_auto] items-center gap-4 p-6 min-h-28">
                 <div class="flex items-center gap-4 min-w-0">
-                    <img src="${coin.item.small}" alt="" class="w-16 h-16">
+                    <img src="${coin.item.small}" alt="" title="${coin.item.name}" class="w-16 h-16">
             
                     <h1 class="text-white truncate" title="${coin.item.name}">
                         ${coin.item.name}
@@ -80,7 +80,7 @@ async function trendingElements() {
             </h2>
         </div>
         `
-
+        newDiv.title = oth.name
         trendingOther.appendChild(newDiv);
     })
 }
@@ -143,3 +143,18 @@ async function market() {
 market()
 
 
+const tableCoins =  document.getElementById("tableCoins") as HTMLDivElement;
+
+async function createTable() {
+    const response = await trending()
+    console.log(response.coins)
+
+    response.coins.forEach((coin = {}) => {
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML = `<img src="${coin.item.small}" title="${coin.item.name}"> <img src=" ${coin.item.data.sparkline}" alt=""> `
+        newDiv.classList.add("tableCoins")
+        tableCoins.appendChild(newDiv)
+    })
+}
+
+createTable();
