@@ -151,7 +151,11 @@ async function createTable() {
 
     response.coins.forEach((coin = {}) => {
         const newDiv = document.createElement("div");
-        newDiv.innerHTML = `<img src="${coin.item.small}" title="${coin.item.name}"> <img src=" ${coin.item.data.sparkline}" alt=""> `
+        newDiv.innerHTML = 
+            `
+                <img src="${coin.item.small}" title="${coin.item.name}"> <img src=" ${coin.item.data.sparkline}" alt=""> 
+                <button><img src="/Images/save.png" alt=""></button>
+            `
         newDiv.classList.add("tableCoins")
         tableCoins.appendChild(newDiv)
     })
