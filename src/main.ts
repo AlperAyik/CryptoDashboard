@@ -160,5 +160,6 @@ async function createTable() {
         tableCoins.appendChild(newDiv)
     })
 }
+// voeg extra chart toe
 
 createTable();
