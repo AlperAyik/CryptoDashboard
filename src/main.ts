@@ -160,6 +160,6 @@ async function createTable() {
         tableCoins.appendChild(newDiv)
     })
 }
-// voeg extra chart toe
+// voeg extra chart toe en extra api endpoints
 
 createTable();
