@@ -160,6 +160,5 @@ async function createTable() {
         tableCoins.appendChild(newDiv)
     })
 }
-// voeg extra chart toe en extra api endpoints
-
+// voeg extra chart toe en extra api endpoints and add auth0 and make navbar sticky and only the right part of the webapp moveable when scrolling
 createTable();
