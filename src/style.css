@@ -109,3 +109,9 @@ button {
 .tableCoins img {
     height: 40px;
 }
+
+.tableBtn.open {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 5px;
+}

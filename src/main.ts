@@ -87,7 +87,7 @@ async function trendingElements() {
 
 trendingElements()
 
-//Test
+//Test clean these all up and add extras if needed
 const navbar = document.querySelector(".navbar") as HTMLDivElement;
 const closeNav = document.getElementById("closeNav") as HTMLButtonElement;
 const btnOpen = document.querySelector(".btnOpen") as HTMLButtonElement;
@@ -144,12 +144,14 @@ market()
 
 
 const tableCoins =  document.getElementById("tableCoins") as HTMLDivElement;
+let prevTable = 0;
+let nextTable = 3;
 
 async function createTable() {
     const response = await trending()
-    console.log(response.coins)
+    const splitResponse = response.coins.slice(prevTable, nextTable)
 
-    response.coins.forEach((coin = {}) => {
+    splitResponse.forEach((coin = {}) => {
         const newDiv = document.createElement("div");
         newDiv.innerHTML = 
             `
@@ -162,3 +164,31 @@ async function createTable() {
 }
 // voeg extra chart toe en extra api endpoints and add auth0 and make navbar sticky and only the right part of the webapp moveable when scrolling
 createTable();
+
+
+const tableButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".tableBtn");
+
+tableButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        tableButtons.forEach((btns) => {
+            btns.classList.remove("open");
+        });
+        tableCoins.innerHTML = ''
+
+        if(index === 0) {
+            prevTable = 0;
+            nextTable = 3;
+        } else if (index === 1) {
+            prevTable = 3;
+            nextTable = 6;
+        } else if (index === 2) {
+            prevTable = 6;
+            nextTable = 9;
+        } else if(index === 3) {
+            prevTable = 9;
+            nextTable = 12;
+        }
+        btn.classList.add("open");
+        createTable();
+    })
+})
